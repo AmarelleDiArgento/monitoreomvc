@@ -5,6 +5,7 @@
  */
 package com.lotus.monitoreomvc.configuration;
 
+
 import java.util.List;
 
 /**

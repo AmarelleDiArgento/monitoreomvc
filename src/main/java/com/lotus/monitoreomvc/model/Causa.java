@@ -21,10 +21,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "dbo.Causas")
 public class Causa implements Serializable {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name = "id_causa")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

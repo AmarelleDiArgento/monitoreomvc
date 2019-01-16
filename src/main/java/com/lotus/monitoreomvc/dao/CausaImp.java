@@ -15,14 +15,17 @@ import com.lotus.monitoreomvc.model.Causa;
 @Transactional
 public class CausaImp extends AbstractSession implements CausaDao {
 
+	@Override
 	public void insert(Causa o) {
 		getSession().persist(o);
 	}
 
+	@Override
 	public void update(Causa o) {
 		getSession().update(o);
 	}
 
+	@Override
 	public void delete(Long id) {
 		Causa o = (Causa) findOneById(id);
 		if(o!=null) {
@@ -30,17 +33,20 @@ public class CausaImp extends AbstractSession implements CausaDao {
 		}
 	}
 
+	@Override
 	public Causa findOneById(Long id) {
 		// TODO Auto-generated method stub
 		return (Causa) getSession().get(Causa.class, id);
 	}
 
+	@Override
 	public Causa findOneByName(String t) {
 		return (Causa) getSession().createQuery(
 				"from Causa from name = :name")
 				.setParameter("name", t).list();
 	}
 
+	@Override
 	public List<Causa> findAll() {
 		// TODO Auto-generated method stub
 		return null;
